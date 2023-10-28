@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="bst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bst.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
