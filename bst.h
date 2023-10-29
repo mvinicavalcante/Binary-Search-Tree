@@ -14,5 +14,6 @@ arvore inserir (arvore raiz, int valor) ;
 void preorder(arvore raiz);
 void inorder(arvore raiz);
 void posorder(arvore raiz);
+int somatorio(arvore raiz);
 
 #endif

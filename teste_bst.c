@@ -23,7 +23,7 @@ int main(int argc, char * argv[]) {
     posorder(a);
     printf("\n");
 
-    //printf("SOMA: %d\n", somatorio(a));
+    printf("SOMA: %d\n", somatorio(a));
     return 0;
 
 

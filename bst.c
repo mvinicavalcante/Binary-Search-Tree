@@ -43,3 +43,11 @@ void posorder(arvore raiz) {
         printf("[%d]", raiz->valor);
     }
 }
+
+int somatorio(arvore raiz) {
+    int soma = 0;
+    if(raiz != NULL) {
+        soma = raiz->valor + somatorio(raiz->esq) + somatorio(raiz->dir);
+    }
+    return soma;
+}
