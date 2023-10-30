@@ -24,7 +24,9 @@ int main(int argc, char * argv[]) {
     printf("\n");
 
     printf("SOMA: %d\n", somatorio(a));
-    busca(a, 4);
+    busca(a, 27);
+    printf("\n");
+    dobrar_valores(a);
     return 0;
 
 

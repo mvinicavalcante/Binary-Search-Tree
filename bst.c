@@ -64,7 +64,18 @@ arvore busca(arvore raiz, int valor) {
         }
         return raiz->valor;
     } else {
-        printf("Valor nao existe");
+        printf("Valor nao encontrado");
         return raiz->valor;
     }
 }
+
+void dobrar_valores(arvore raiz) {
+    int multiplicacao = 0;
+    if(raiz != NULL) {
+        multiplicacao = raiz->valor * 2;
+        dobrar_valores(raiz->esq);
+        printf("[%d]", multiplicacao);
+        dobrar_valores(raiz->dir);
+    }
+}
+
