@@ -51,3 +51,20 @@ int somatorio(arvore raiz) {
     }
     return soma;
 }
+
+arvore busca(arvore raiz, int valor) {
+    if(raiz != NULL) {
+        if(raiz->valor == valor){
+            printf("Valor encontrado");
+        }
+        else if(valor > raiz->valor) {
+            busca(raiz->dir, valor);
+        } else {
+            busca(raiz->esq, valor);
+        }
+        return raiz->valor;
+    } else {
+        printf("Valor nao existe");
+        return raiz->valor;
+    }
+}
