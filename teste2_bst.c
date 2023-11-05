@@ -13,6 +13,7 @@ int main(int argc, char * argv[]) {
     a = inserir(a, 21);
     a = inserir(a, 30);
     a = inserir(a, 2);
+    a = inserir(a, 1);
 
     printf("PRE-ORDER: ");
     preorder(a);
@@ -24,15 +25,18 @@ int main(int argc, char * argv[]) {
 
     printf("SOMA: %d\n", somatorio(a));
     busca(a, 7);
-    printf("\n");
+    printf("\nDobra de valores (IN-ORDER): \n");
     dobrar_valores(a);
+    printf("\n");
 
     printf("Maior valor: \n");
     maior(a);
 
+    printf("\n");
+
+    remover(a, 7);
+    printf("PRE-ORDER apos remocao: ");
+    preorder(a);
+
     return 0;
-
-
-
-
 }

@@ -10,6 +10,9 @@ typedef struct no {
 typedef no* arvore;
 
 arvore inserir (arvore raiz, int valor);
+arvore remover (arvore raiz, int valor);
+
+int maior(arvore raiz);
 
 void preorder(arvore raiz);
 void inorder(arvore raiz);

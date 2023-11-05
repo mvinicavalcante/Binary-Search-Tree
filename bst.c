@@ -20,6 +20,57 @@ arvore inserir (arvore raiz, int valor){
     }
 }
 
+int maior(arvore raiz) {
+    if(raiz == NULL) {
+        printf("Raiz vazia");
+        return -1;
+    } else {
+        if(raiz->dir != NULL) {
+            maior(raiz->dir);
+        }
+        if(raiz->dir == NULL) {
+            printf("%d", raiz->valor);
+            return raiz->valor;
+        }
+    }
+}
+
+arvore remover(arvore raiz, int valor) {
+    if(raiz == NULL) {
+        return raiz;
+    } else {
+        if(valor > raiz->valor) {
+            raiz->dir = remover(raiz->dir, valor);
+        }
+        else if(valor < raiz->valor) {
+            raiz->esq = remover(raiz->esq, valor);
+        }
+        else {
+            if(raiz->esq == NULL && raiz->dir == NULL) {
+                free(raiz);
+                return NULL;
+            }
+            if(raiz->esq != NULL && raiz->dir == NULL) {
+                arvore aux = raiz->esq;
+                free(raiz);
+                return aux;
+            }
+            if(raiz->esq == NULL && raiz->dir != NULL) {
+                arvore aux = raiz->dir;
+                free(raiz);
+                return aux;
+            }
+            else {
+                arvore temp = maior(raiz->esq);
+                raiz->valor = temp->valor;
+                raiz->esq = remover(raiz->esq, temp->valor);
+                return raiz;
+            }
+            return raiz;
+        }
+    }
+}
+
 void preorder(arvore raiz){
     if(raiz != NULL) {
         printf("[%d]", raiz->valor);
@@ -36,6 +87,7 @@ void inorder(arvore raiz){
     }
 
 }
+
 void posorder(arvore raiz) {
     if(raiz != NULL) {
         posorder(raiz->esq);
@@ -70,9 +122,8 @@ arvore busca(arvore raiz, int valor) {
 }
 
 void dobrar_valores(arvore raiz) {
-    int multiplicacao = 0;
     if(raiz != NULL) {
-        multiplicacao = raiz->valor * 2;
+        int multiplicacao = raiz->valor * 2;
         dobrar_valores(raiz->esq);
         printf("[%d]", multiplicacao);
         dobrar_valores(raiz->dir);
