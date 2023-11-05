@@ -29,12 +29,12 @@ int main(int argc, char * argv[]) {
     dobrar_valores(a);
     printf("\n");
 
-    printf("Maior valor: \n");
-    maior(a);
+    //printf("Maior valor: \n");
+    //maior(a);
 
     printf("\n");
 
-    remover(a, 7);
+    a = remover(a, 7);
     printf("PRE-ORDER apos remocao: ");
     preorder(a);
 

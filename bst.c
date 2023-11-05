@@ -29,7 +29,6 @@ int maior(arvore raiz) {
             maior(raiz->dir);
         }
         if(raiz->dir == NULL) {
-            printf("%d", raiz->valor);
             return raiz->valor;
         }
     }
@@ -60,12 +59,9 @@ arvore remover(arvore raiz, int valor) {
                 free(raiz);
                 return aux;
             }
-            else {
-                arvore temp = maior(raiz->esq);
-                raiz->valor = temp->valor;
-                raiz->esq = remover(raiz->esq, temp->valor);
-                return raiz;
-            }
+            int maiorValorSubarvoreEsquerda = maior(raiz->esq);
+            raiz->valor = maiorValorSubarvoreEsquerda;
+            raiz->esq = remover(raiz->esq, maiorValorSubarvoreEsquerda);
             return raiz;
         }
     }
