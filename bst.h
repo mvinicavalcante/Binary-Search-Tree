@@ -25,4 +25,7 @@ void mesclar (arvore raiz1, arvore raiz2);
 void descendentes(arvore raiz, int valor);
 void ascendentes(arvore raiz, int valor);
 
+void reverso(arvore raiz);
+int qtdPar(arvore raiz);
+
 #endif

@@ -23,6 +23,10 @@ int main(int argc, char * argv[]) {
     posorder(a);
     printf("\n");
 
+    printf("REVERSO: ");
+    reverso(a);
+
+    printf("\n");
     printf("SOMA: %d\n", somatorio(a));
     busca(a, 7);
     printf("\nDobra de valores (IN-ORDER): \n");
@@ -37,6 +41,10 @@ int main(int argc, char * argv[]) {
     a = remover(a, 7);
     printf("PRE-ORDER apos remocao: ");
     preorder(a);
+
+    printf("\n");
+    int resultado = qtdPar(a);
+    printf("Quantidade de numeros pares: %d\n", resultado);
 
     return 0;
 }

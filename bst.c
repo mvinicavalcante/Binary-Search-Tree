@@ -81,7 +81,6 @@ void inorder(arvore raiz){
         printf("[%d]", raiz->valor);
         inorder(raiz->dir);
     }
-
 }
 
 void posorder(arvore raiz) {
@@ -126,3 +125,23 @@ void dobrar_valores(arvore raiz) {
     }
 }
 
+void reverso(arvore raiz) {
+     if(raiz != NULL) {
+        reverso(raiz->dir);
+        printf("[%d]", raiz->valor);
+        reverso(raiz->esq);
+    }
+}
+
+int qtdPar(arvore raiz) {
+    if (raiz == NULL) {
+        return 0;
+    }
+    int cont = 0;
+    if (raiz->valor % 2 == 0) {
+        cont++;
+    }
+    cont += qtdPar(raiz->esq);
+    cont += qtdPar(raiz->dir);
+    return cont;
+}

@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1699217363 source:c:\users\vinicius\onedrive\Área de trabalho\3o período\aedii\binary-search-tree\bst.c
+1699580397 source:c:\users\vinicius\onedrive\Área de trabalho\3o período\aedii\binary-search-tree\bst.c
 	"bst.h"
 	<stdlib.h>
 	<stdio.h>
 
-1699214587 c:\users\vinicius\onedrive\Área de trabalho\3o período\aedii\binary-search-tree\bst.h
+1699576274 c:\users\vinicius\onedrive\Área de trabalho\3o período\aedii\binary-search-tree\bst.h
 
 1698635580 source:c:\users\vinicius\onedrive\Área de trabalho\3o período\aedii\binary-search-tree\teste_bst.c
 	"bst.h"
 	<stdlib.h>
 	<stdio.h>
 
-1699219893 source:c:\users\vinicius\onedrive\Área de trabalho\3o período\aedii\binary-search-tree\teste2_bst.c
+1699580420 source:c:\users\vinicius\onedrive\Área de trabalho\3o período\aedii\binary-search-tree\teste2_bst.c
 	"bst.h"
 	<stdlib.h>
 	<stdio.h>
