@@ -6,26 +6,36 @@ typedef struct no {
     struct no *esq;
     struct no *dir;
 } no;
-
 typedef no* arvore;
 
 arvore inserir (arvore raiz, int valor);
-arvore remover (arvore raiz, int valor);
-
-int maior(arvore raiz);
 
 void preorder(arvore raiz);
-void inorder(arvore raiz);
-void posorder(arvore raiz);
-int somatorio(arvore raiz);
 
-arvore busca(arvore raiz, int valor);
-void dobrar_valores(arvore raiz);
-void mesclar (arvore raiz1, arvore raiz2);
-void descendentes(arvore raiz, int valor);
-void ascendentes(arvore raiz, int valor);
+void inorder(arvore raiz);
+
+void posorder(arvore raiz);
 
 void reverso(arvore raiz);
+
 int qtdPar(arvore raiz);
+
+arvore antecessor(arvore raiz, int valor);
+
+arvore pai(arvore raiz, int valor);
+
+arvore remover (arvore raiz, int valor);
+
+int somaPar(arvore raiz);
+
+arvore podar (arvore raiz, int valor);
+
+void dobro(arvore raiz);
+
+arvore busca(arvore raiz, int valor);
+
+void descendentes(arvore raiz, int valor);
+
+int altura(arvore raiz);
 
 #endif

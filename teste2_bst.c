@@ -1,50 +1,123 @@
 #include "bst.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, char * argv[]) {
-    arvore a = NULL;
-    a = inserir(a, 18);
-    a = inserir(a, 7);
-    a = inserir(a, 9);
-    a = inserir(a, 10);
-    a = inserir(a, 27);
-    a = inserir(a, 12);
-    a = inserir(a, 21);
-    a = inserir(a, 30);
-    a = inserir(a, 2);
-    a = inserir(a, 1);
+void imprimirMenu() {
+    printf("\nOpcoes disponiveis:\n");
+    printf("1. Inserir elemento\n");
+    printf("2. Exibir arvore preorder\n");
+    printf("3. Exibir arvore inorder\n");
+    printf("4. Exibir arvore posorder\n");
+    printf("5. Exibir arvore reverso\n");
+    printf("6. Exibir a quantidade de elementos pares da arvore\n");
+    printf("7. Exibir antecessor de um elemento da arvore\n");
+    printf("8. Exibir pai de um elemento da arvore\n");
+    printf("9. Remover elemento da arvore\n");
+    printf("10. Exibir a soma de elementos pares da arvore\n");
+    printf("11. Podar os elementos e seus respectivos filhos\n");
+    printf("12. Exibe a arvore com o valor de seus elementos duplicados\n");
+    printf("13. Busca um elemento na arvore\n");
+    printf("14. Mostrar os descendentes de um elemento\n");
+    printf("15. Mostrar a altura de uma arvore\n");
+    printf("99. Sair\n");
+}
 
-    printf("PRE-ORDER: ");
-    preorder(a);
-    printf("\nIN-ORDER: ");
-    inorder(a);
-    printf("\nPOS-ORDER: ");
-    posorder(a);
-    printf("\n");
+int main() {
+    arvore raiz = NULL;
 
-    printf("REVERSO: ");
-    reverso(a);
+    int escolha;
+    int valor;
 
-    printf("\n");
-    printf("SOMA: %d\n", somatorio(a));
-    busca(a, 7);
-    printf("\nDobra de valores (IN-ORDER): \n");
-    dobrar_valores(a);
-    printf("\n");
-
-    //printf("Maior valor: \n");
-    //maior(a);
-
-    printf("\n");
-
-    a = remover(a, 7);
-    printf("PRE-ORDER apos remocao: ");
-    preorder(a);
-
-    printf("\n");
-    int resultado = qtdPar(a);
-    printf("Quantidade de numeros pares: %d\n", resultado);
+    do {
+        imprimirMenu();
+        scanf("%d", &escolha);
+        switch (escolha) {
+            case 1:
+                printf("Digite o valor a ser inserido: ");
+                scanf("%d", &valor);
+                raiz = inserir(raiz, valor);
+                break;
+            case 2:
+                printf("Exibir arvore preorder: ");
+                preorder(raiz);
+                printf("\n");
+                break;
+            case 3:
+                printf("Exibir arvore inorder: ");
+                inorder(raiz);
+                printf("\n");
+                break;
+            case 4:
+                printf("Exibir arvore posorder: ");
+                posorder(raiz);
+                printf("\n");
+                break;
+            case 5:
+                printf("Exibir arvore reverso: ");
+                reverso(raiz);
+                printf("\n");
+                break;
+            case 6:
+                printf("Exibir quantidade par de numeros na arvore: ");
+                qtdPar(raiz);
+                printf("\n");
+                break;
+            case 7:
+                printf("Exibir o antecessor de um elemento na arvore: ");
+                scanf("%d", &valor);
+                antecessor(raiz, valor);
+                printf("\n");
+                break;
+            case 8:
+                printf("Exibir o pai de um elemento na arvore: ");
+                scanf("%d", &valor);
+                antecessor(raiz, valor);
+                printf("\n");
+                break;
+            case 9:
+                printf("Digite o valor a ser removido: ");
+                scanf("%d", &valor);
+                raiz = remover(raiz, valor);
+                printf("\n");
+                break;
+            case 10:
+                printf("Exibe a soma de numeros pares da arvore: ");
+                somaPar(raiz);
+                printf("\n");
+                break;
+            case 11:
+                printf("Poda os descendentes de um elemento da arvore: ");
+                somaPar(raiz);
+                printf("\n");
+                break;
+            case 12:
+                printf("Exibe o dobro dos elementos contidos na arvore: ");
+                dobro(raiz);
+                printf("\n");
+                break;
+            case 13:
+                printf("Busca por um elemento da arvore: ");
+                scanf("%d", &valor);
+                busca(raiz, valor);
+                printf("\n");
+                break;
+            case 14:
+                printf("Mostra os descendentes de um elemento da arvore: ");
+                scanf("%d", &valor);
+                descendentes(raiz, valor);
+                printf("\n");
+                break;
+            case 15:
+                printf("Altura da arvore: %d\n", altura(raiz));
+                break;
+            case 99:
+                printf("Saindo do programa. Limpando memória...\n");
+                exit(0);
+                break;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+        }
+    } while (1);
 
     return 0;
 }
