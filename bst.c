@@ -239,8 +239,11 @@ void descendentes(arvore raiz, int valor) {
                 descendentes(raiz->dir, valor);
             }
         } else {
-            descendentes(raiz->esq, valor);
-            descendentes(raiz->dir, valor);
+            if(valor > raiz->valor) {
+                descendentes(raiz->esq, valor);
+            } else {
+                descendentes(raiz->dir, valor);
+            }
         }
     }
 }
