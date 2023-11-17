@@ -229,21 +229,13 @@ arvore podar(arvore raiz, int valor) {
 
 void descendentes(arvore raiz, int valor) {
     if (raiz != NULL) {
-        if (raiz->valor == valor) {
-            if (raiz->esq != NULL) {
-                printf("[%d]", raiz->esq->valor);
-                descendentes(raiz->esq, valor);
-            }
-            if (raiz->dir != NULL) {
-                printf("[%d]", raiz->dir->valor);
-                descendentes(raiz->dir, valor);
-            }
+        if (valor == raiz->valor) {
+            inorder(raiz->esq);
+            inorder(raiz->dir);
+        } else if (valor > raiz->valor) {
+            descendentes(raiz->dir, valor);
         } else {
-            if(valor > raiz->valor) {
-                descendentes(raiz->esq, valor);
-            } else {
-                descendentes(raiz->dir, valor);
-            }
+            descendentes(raiz->esq, valor);
         }
     }
 }
